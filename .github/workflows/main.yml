@@ -10,3 +10,7 @@ jobs:
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "."
+    - uses: EndBug/add-and-commit@v9 
+      with:
+        add: 'build'
+
