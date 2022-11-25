@@ -6,10 +6,6 @@ jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-      with:
-        repository: ${{ github.event.pull_request.head.repo.full_name }}
-        ref: ${{ github.event.pull_request.head.ref }}
     - uses: ammaraskar/sphinx-action@master
       with:
         docs-folder: "."
