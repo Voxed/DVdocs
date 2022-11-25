@@ -10,3 +10,5 @@ Sub
 ~~~
 
 Hello! :ref:`h2d`.
+
+We have :ref:`commitees`!
