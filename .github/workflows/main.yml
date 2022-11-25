@@ -39,5 +39,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branch: main
-        directory: main
+        directory: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
