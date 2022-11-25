@@ -24,11 +24,13 @@ jobs:
     # ===============================
     - name: Commit documentation changes
       run: |
-        git clone https://github.com/Voxed/DVdocs.git --branch gh-pages --single-branch
-        cp -r build/html/* .
+        git clone https://github.com/Voxed/DVdocs.git --branch gh-pages --single-branch gh-pages
+        rm -r gh-pages/*
+        cp -r docs/_build/html/* gh-pages/
+        cd gh-pages
         touch .nojekyll
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config --local user.email "megaman@monaden.se"
+        git config --local user.name "Megaman"
         git add .
         git commit -m "Update documentation" -a || true
         # The above command will fail if no changes were present, so we ignore
@@ -37,5 +39,5 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         branch: gh-pages
-        directory: .
+        directory: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
